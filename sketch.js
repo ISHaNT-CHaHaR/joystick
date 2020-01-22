@@ -7,19 +7,19 @@ const MAX_DEFLECT = Math.PI / 8;
 
 /** p5.js */
 function setup() {
-    createCanvas(400, 400, WEBGL).parent('#canvas');
+    createCanvas(80, 80, WEBGL).parent('#canvas');
 }
 
 /** p5.js */
 function draw() {
-    background(6, 0, 163);
-    const stickLen = width * 0.45;
+    background(6, 3, 100);
+    const stickLen = width * 0.32;
 
     ambientLight(128);
-    directionalLight(255, 255, 255, 0, 0, -1);  // A white light from behind the viewer
+    directionalLight(300, 255, 255, 0, 0, -1);  // A white light from behind the viewer
     ambientMaterial(192);
 
-    sphere(70);
+    sphere(20);
 
     rotateX(-PI / 2);
     if (movable) {
@@ -66,7 +66,7 @@ function mouseMoved() {
 
     if (!movable && dist(x, y, 0, 0) < activationZone) {
         movable = true;
-        select('#xy').removeClass('invisible');
+       select('#xy').removeClass('invisible');
     }
 
     if (movable) {
